@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path,include
 
 urlpatterns = [
+    path('noticia/', include('apps.Noticia.urls')),
     path('admin/', admin.site.urls),
-    path('',include('noticia.urls'))
+    path('registro/',include('apps.Registro.urls'))
+    
 ]
