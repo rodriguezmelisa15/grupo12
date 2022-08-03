@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from .models import Noticia
 
 def noticia(request):
-    return render(request,'noticia.html')
+    noticia= Noticia.objects.all()
+    return render(request,'noticia.html',{"noticia":noticia})
 
