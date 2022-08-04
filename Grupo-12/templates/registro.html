@@ -7,44 +7,40 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     </head>
     <body>
-        <div>
-            <form action="/registro/" method="POST">{% csrf_token %}
-                {{ form.as_p }}
-                <div> <class="form-group">
-                    Usuario:<input type="text" id="txtUsuario" name="txtUsuario" class="form-control" placeholder="Usuario" minlength="6" maxlength="6" required>
-                <div>
-                <div> <class="form-group">
-                    Nombre:<input type="text" id="txtNombre" name="txtNombre" class="form-control" placeholder="Nombre" maxlength="50" required>
-                <div> 
-                <div> <class="form-group">
-                    Apellido:<input type="text" id="txtApellido" name="txtApellido" class="form-control" placeholder="Apellido" maxlength="50" required>
-                <div> 
-                <div> <class="form-group">
-                    Mail:<input type="text" id="txtMail" name="txtMail" class="form-control" placeholder="Mail" maxlength="50" required>
-                <div> 
-                <div> <class="form-group">
-                    Contraseña:<input type="text" id="txtContraseña" name="txtContraseña" class="form-control" placeholder="Contraseña" minlength="8" maxlength="16" required>
-                <div> 
-                <button type="submit" class="btn btn-success btn-block text-white">Registrar</button>
-            </form>
-        </div>
+        <h2>Registro de Usuarios Nuevos</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/createUser/" method="POST">{% csrf_token %}
+                    
+                    <div class="form-group">
+                        <input type="text" id="txtUsuario" name="txtUsuario" class="form-control" placeholder="Usuario" required>
+                    </div>
 
-        <div>
-            <ul>
-                {% for c in user %}
-                    <li>{{c.nombre}}</li>
-                 {% endfor %}
-            </ul>
-        </div>
+                    <div class="form-group">
+                        <input type="text" id="txtNombre" name="txtNombre" class="form-control" placeholder="Nombre"
+                            maxlength="50" required>
+                    </div>
 
+                    <div class="form-group">
+                        <input type="text" id="txtApellido" name="txtApellido" class="form-control" placeholder="Apellido" maxlength="50" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="txtMail" name="txtMail" class="form-control" placeholder="Mail" maxlength="50" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="txtContra" name="txtContra" class="form-control" placeholder="Contraseña" minlength="8" maxlength="16" required>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
     </body>
 </html>
 
 
-<form action="" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <div class="text-center">
-    <input type="submit" class="btn btn-primary btn-block" value="Crear página" />
-    </div>
-  </form>

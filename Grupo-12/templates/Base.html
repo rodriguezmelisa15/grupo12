@@ -1,7 +1,24 @@
-<div>
-    <ul>
-        {% for c in user %}
-            <li>{{c.nombre}}</li>
-         {% endfor %}
-    </ul>
-</div>
+<h1>Listado de Cursos</h1>
+        <div class="table-responsive py-2">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Titulo</th>
+                        <th>autor</th>
+                        <th>cuerpo</th>
+                        <th colspan="2">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in PruebaN %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{c.titulo}}</td>
+                        <td>{{c.autor}}</td>
+                        <td>{{c.cuerpo}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
