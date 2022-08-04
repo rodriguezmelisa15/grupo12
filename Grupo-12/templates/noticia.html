@@ -8,8 +8,14 @@
   </head>
   <body>
     {% for c in noticia %}
-        <li>{{c.nombre}}</li>
+      <li>{{c.nombre}}</li>
     {% endfor %}
-    
+    <div>
+      <ul>
+        {% for c in user %}
+          <li>{{c.nombre}}</li>
+        {% endfor %}
+      </ul>
+    </div>
   </body>
 </html>

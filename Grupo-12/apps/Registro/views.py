@@ -1,17 +1,14 @@
-import mailbox
+from venv import create
 from django.shortcuts import redirect, render
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
-from django.views.generic import CreateView
-from .models import usuario
+from .models import Usuario
 
 
 
 # Create your views here.
 
 def registro(request):
-    usuarios=usuario.objects.all()
-    return render(request, "registro.html",{"user": usuarios})
+    prueba=Usuario.objects.all()
+    return render(request, "registro.html",{"user": prueba})
 
 def createUsuario(request):
     usuario= request.POST['txtUsuario']
@@ -20,6 +17,6 @@ def createUsuario(request):
     mail= request.POST['txtMail']
     contraseña= request.POST['txtContraseña']
 
-
-    usuario= usuario.object.create(usuario=usuario, nombre= nombre, apellido= apellido, mail= mail, contraseña= contraseña)
+    nuevo = Usuario.objects.create(usuario=usuario, nombre= nombre, apellido= apellido, mail= mail, contraseña= contraseña)
+    messages.success(request, '¡Usuario registrado!')
     return redirect('/')

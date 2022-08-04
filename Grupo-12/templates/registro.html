@@ -8,7 +8,8 @@
     </head>
     <body>
         <div>
-            <form action="/registrarUsuario/" method="POST">{%csrf_token%}
+            <form action="/registro/" method="POST">{% csrf_token %}
+                {{ form.as_p }}
                 <div> <class="form-group">
                     Usuario:<input type="text" id="txtUsuario" name="txtUsuario" class="form-control" placeholder="Usuario" minlength="6" maxlength="6" required>
                 <div>
@@ -24,7 +25,8 @@
                 <div> <class="form-group">
                     Contraseña:<input type="text" id="txtContraseña" name="txtContraseña" class="form-control" placeholder="Contraseña" minlength="8" maxlength="16" required>
                 <div> 
-            <button type="submit" class="btn btn-success btn-block text-white">Registrar</button>
+                <button type="submit" class="btn btn-success btn-block text-white">Registrar</button>
+            </form>
         </div>
 
         <div>
@@ -38,3 +40,11 @@
 
     </body>
 </html>
+
+
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <div class="text-center">
+    <input type="submit" class="btn btn-primary btn-block" value="Crear página" />
+    </div>
+  </form>

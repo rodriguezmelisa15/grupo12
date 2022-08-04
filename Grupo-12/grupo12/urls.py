@@ -20,6 +20,5 @@ urlpatterns = [
     path('noticia/', include('apps.Noticia.urls')),
     path('admin/', admin.site.urls),
     path('registro/',include('apps.Registro.urls')),
-    path('registrarUsuario/', include ('apps.Registro.urls'))
     
 ]
