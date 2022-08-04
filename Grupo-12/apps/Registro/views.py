@@ -1,6 +1,6 @@
-from venv import create
-from django.shortcuts import redirect, render
+from django.shortcuts import render, redirect
 from .models import Usuario
+
 
 
 
@@ -15,8 +15,10 @@ def createUsuario(request):
     nombre= request.POST['txtNombre']
     apellido= request.POST['txtApellido']
     mail= request.POST['txtMail']
-    contraseña= request.POST['txtContraseña']
+    contraseña= request.POST['txtContra']
 
-    nuevo = Usuario.objects.create(usuario=usuario, nombre= nombre, apellido= apellido, mail= mail, contraseña= contraseña)
-    messages.success(request, '¡Usuario registrado!')
+    nuevo = Usuario.objects.create(
+        usuario=usuario, nombre=nombre, apellido= apellido, mail= mail, contraseña= contraseña)
     return redirect('/')
+    
+
