@@ -1,8 +1,9 @@
 from django import views
 from django.urls import path
-from . import views
+from .views import Registro
+
 
 urlpatterns = [
-    path('', views.registro),
+    path('', Registro.as_view(), name="registro"),
     
 ]

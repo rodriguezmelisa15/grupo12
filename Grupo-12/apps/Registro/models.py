@@ -1,14 +1,17 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
-class usuario(models.Model):
-    usuario:models.CharField(primary_key=True,max_length=8)
-    nombre:models.CharField(max_length=50)
-    apellido:models.CharField(max_length=50)
-    mail:models.CharField(max_length=50)
-    contraseña:models.CharField(max_length=8)
+class Usuario(models.Model):
+    usuario = models.CharField(User,max_length=8, null = True)
+    nombre = models.CharField(max_length=50, null = True)
+    apellido = models.CharField(max_length=50, null = True)
+    mail = models.CharField(max_length=50, null = True)
+    contrasenia = models.CharField(max_length=8, null = True)
 
-def __str__(self):
-    texto= '{0} ({1})'
-    return texto.format(self.usuario, self.nombre)
+
+    def __str__(self):
+        texto= '{0} ({1})'
+        return texto.format(self.usuario, self.nombre)
+
+        
