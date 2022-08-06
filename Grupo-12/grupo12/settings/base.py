@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'apps.Noticia',
     'apps.Login',
     'apps.Registro',
+    
 ]
 
 MIDDLEWARE = [

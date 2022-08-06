@@ -12,6 +12,9 @@
     
 
     <h1>Listado de Noticias</h1>
+    <a button href="/noticia/" type="submit" class="btn btn-primary">Home</a>
+    <a button href="/" type="submit" class="btn btn-primary">Registrarse</a>
+    <a button href="/login/" type="submit" class="btn btn-primary">Iniciar Sesion</a>
         <div class="table-responsive py-2">
             <table class="table table-striped">
                 <thead>
@@ -49,14 +52,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for i in nuevo %}
-                    <tr>
-                        <td>{{forloop.counter}}</td>
-                        <td>{{i.usuario}}</td>
-                        <td>{{i.nombre}}</td>
-                        <td>{{i.apellido}}</td>
-                    </tr>
-                    {% endfor %}
+                 
                 </tbody>
             </table>
         </div>

@@ -18,8 +18,9 @@ from django.urls import path,include
 #from django.contrib.auth.views import login
 
 urlpatterns = [
-    path('', include('apps.Noticia.urls')),
+    path('noticia/', include('apps.Noticia.urls')),
     path('admin/', admin.site.urls),
-    path('registro/',include('apps.Registro.urls')),
-    #path('',login, {'template_name':'login.html'}, name='login')
+    path('', include('apps.Registro.urls')),
+    path('login/',include('apps.Login.urls')),
+      
 ]
