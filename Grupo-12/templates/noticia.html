@@ -49,12 +49,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for f in nuevo %}
+                    {% for i in nuevo %}
                     <tr>
                         <td>{{forloop.counter}}</td>
-                        <td>{{f.usuario}}</td>
-                        <td>{{f.nombre}}</td>
-                        <td>{{f.apellido}}</td>
+                        <td>{{i.usuario}}</td>
+                        <td>{{i.nombre}}</td>
+                        <td>{{i.apellido}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

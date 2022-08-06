@@ -1,9 +1,10 @@
 MYSQL = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Grupo12',
+        'NAME': 'Grupo-12',
 	    'USER': 'root',
-	    'PASSWORD': '',
-	    'PORT':	3306
+	    'PASSWORD': 'Masork31+',
+        'HOST':'localhost',
+	    'PORT': 3306,
     }
 }

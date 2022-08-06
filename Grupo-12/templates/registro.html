@@ -10,7 +10,7 @@
         <h2>Registro de Usuarios Nuevos</h2>
         <div class="card">
             <div class="card-body">
-                <form action="/create/" method="POST">{% csrf_token %}
+                <form action="/registro/" method="post">{% csrf_token %}
                     
                     <div class="form-group">
                         <input type="text" id="txtUsuario" name="txtUsuario" class="form-control" placeholder="Usuario" required>

@@ -5,41 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=
     , initial-scale=1.0">
-    <title>Document</title>
+    <title>Iniciar Sesion</title>
 </head>
 <body>
     
-    <form metod="post">
-        {% csrf_token %}
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="form-group">
-                    <label for="username">Usuario</label>
-                    <input class="form-control" type="text" name="usuario">
-                </div>
+    <h2>Iniciar Sesion</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/login/" method="post">{% csrf_token %}
+                    
+                    <div class="form-group">
+                        <input type="text" id="txtUsuario" name="txtUsuario" class="form-control" placeholder="Usuario" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="txtContra" name="txtContra" class="form-control" placeholder="Contraseña" minlength="8" maxlength="16" required>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white">Ingresar</button>
+                    </div>
+                </form>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="form-group">
-                    <label for="username">Contraseña</label>
-                    <input class="form-control" type="password" name="contraseña">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="form-group">
-                    <a href="#">Olvide mi Contraseña</a>
-                    <input class="btn btn-primary" type="submit" value="Ingresar">
-                </div>
-            </div>
-        </div>
-
-
-    </form>
 
 
 
