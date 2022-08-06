@@ -8,17 +8,16 @@ from .models import Usuario
 
 def registro(request):
     prueba=Usuario.objects.all()
-    return render(request, "registro.html",{"user": prueba})
+    return render(request, "registro.html",{"nuevo": prueba})
 
-def createUsuario(request):
+def create(request):
     usuario= request.POST['txtUsuario']
     nombre= request.POST['txtNombre']
     apellido= request.POST['txtApellido']
     mail= request.POST['txtMail']
     contraseña= request.POST['txtContra']
 
-    nuevo = Usuario.objects.create(
-        usuario=usuario, nombre=nombre, apellido= apellido, mail= mail, contraseña= contraseña)
+    Usuario.objects.create(usuario=usuario, nombre=nombre, apellido= apellido, mail= mail, contraseña= contraseña)
     return redirect('/')
     
 
