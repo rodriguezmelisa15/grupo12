@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block titulo %} Creando Noticia {% endblock %}
+{% block contenido %}
+
+<h1>Crear noticia</h1>
+<div class="form-group">
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button>Publicar</button>
+</form>
+</div>
+{% endblock %}
+

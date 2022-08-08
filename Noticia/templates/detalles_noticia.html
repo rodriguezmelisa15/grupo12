@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+   
+
+
+
+{% block titulo %} 
+{{ noticia.titulo_cartel }}
+{% endblock %}   
+{% block contenido %}
+
+<h1>{{ noticia.titulo }}</h1>
+<small>{{ noticia.fecha_noticia }} - Por: {{ noticia.autor.first_name }} {{ noticia.autor.last_name }}</small><br/>
+
+<hr>
+<br/>
+{{ noticia.cuerpo }}
+
+
+<br/><br/>
+<a href="{% url 'home' %}" class="btn btn-secondary">Volver</a>
+
+
+{% endblock %}
