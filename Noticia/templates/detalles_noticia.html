@@ -1,23 +1,26 @@
 {% extends 'base.html' %}
-   
 
+{% block titulo %}
+{{ noticia.titulo }}
+{% endblock %}
 
-
-{% block titulo %} 
-{{ noticia.titulo_cartel }}
-{% endblock %}   
 {% block contenido %}
-
-<h1>{{ noticia.titulo }}</h1>
-<small>{{ noticia.fecha_noticia }} - Por: {{ noticia.autor.first_name }} {{ noticia.autor.last_name }}</small><br/>
-
-<hr>
-<br/>
-{{ noticia.cuerpo }}
-
-
-<br/><br/>
+<article class="detail-card">
+    <div class="col">
+        <div class="card h-100">
+            <!-- FIXME ENZO: Tomar imagen desde BD segun Noticia -->
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHvevqdetxTWZXzQnrZmlCX5hH9ZXnqp8x2A&usqp=CAU"
+                class="card-img-top">
+            <div class="card-body">
+                <h3 class="card-title">{{ noticia.titulo }}</h5>
+                    <h6>{{ noticia.titulo_cartel }}</h6>
+                    <p class="card-text">{{ noticia.cuerpo }}</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">{{ noticia.fecha_noticia }} - Por: {{ noticia.autor}}</small>
+            </div>
+        </div>
+    </div>
+</article>
 <a href="{% url 'home' %}" class="btn btn-secondary">Volver</a>
-
-
 {% endblock %}

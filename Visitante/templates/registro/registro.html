@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
-{% block titulo %} Registrar {% endblock %}
+{% block titulo %} Registrar Nuevo Usuario {% endblock %}
 {% block contenido %}
 
-<h1>Registrate</h1>
-<div class="form-group">
-<form method="POST">
+<form method="POST" class="form-group">
     {% csrf_token %}
     {{ form.as_p}}
     <button>Registrarse</button>
 </form>
-</div>
+
 {% endblock %}
