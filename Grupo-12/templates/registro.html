@@ -10,7 +10,7 @@
         <h2>Registro de Usuarios Nuevos</h2>
         <div class="card">
             <div class="card-body">
-                <form action="/registro/" method="POST">{% csrf_token %}
+                <form method="POST">{% csrf_token %}
                     
                     <div class="form-group">
                         <input type="text" id="txtUsuario" name="txtUsuario" class="form-control" placeholder="Usuario" required>
@@ -35,7 +35,7 @@
 
                     <div class="form-group">
                         <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
-                        <a button href="/noticia/" type="submit" class="btn btn-primary">Home</a>
+                        <a button href="{% url 'inicio' %}" type="submit" class="btn btn-primary">Home</a>
                     </div>
                 </form>
             </div>
