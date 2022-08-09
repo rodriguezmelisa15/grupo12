@@ -73,6 +73,11 @@ body {
   justify-content: space-between;
 }
 
+.card-body p {
+  height: 100px;
+  overflow-y: hidden;
+}
+
 .newsContainer {
   width: 80%;
   display: flex;
