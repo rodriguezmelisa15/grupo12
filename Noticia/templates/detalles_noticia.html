@@ -22,5 +22,38 @@
         </div>
     </div>
 </article>
+<section class="comments-container">
+    <button class="btn btn-light w-100" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1"
+        aria-expanded="false" aria-controls="multiCollapseExample1">Escribir un Comentario</button>
+    <div class="row">
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+            <div class="card card-body">
+                <textarea rows="4" placeholder="Escribe un comentario..."></textarea>
+                <button class="btn btn-primary w-25">Comentar</button>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-light  w-100" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2"
+        aria-expanded="false" aria-controls="multiCollapseExample2">Ver Todos los Comentarios</button>
+    <div class="row">
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+            <div class="card">
+                <div class="card-header">
+                    Nombre de Usuario
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>Este es el contenido de un comentario Random</p>
+                        <footer class="blockquote-footer">Fecha de Comentario <cite title="Source Title">- Moderador
+                                /
+                                Visitante</cite>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
 <a href="{% url 'home' %}" class="btn btn-secondary">Volver</a>
 {% endblock %}
