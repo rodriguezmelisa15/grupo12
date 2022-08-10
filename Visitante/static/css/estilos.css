@@ -73,7 +73,7 @@ body {
   justify-content: space-between;
 }
 
-.card-body p {
+.card-body-home p {
   height: 100px;
   overflow-y: hidden;
 }
@@ -122,4 +122,17 @@ body {
   display: flex;
   flex-direction: column;
   width: 50%;
+}
+
+.comments-container {
+  width: 50%;
+  border: 1px solid lightgray;
+}
+
+.comments-container .collapse {
+  padding: 10px 30px;
+}
+.comments-container input {
+  height: 60px;
+  vertical-align: top;
 }
