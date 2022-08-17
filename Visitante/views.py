@@ -1,11 +1,14 @@
-from django.shortcuts import render
-from django.views import generic
-from django.contrib.auth.forms import UserCreationForm
-from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import CreateView
+from django.urls import reverse
 
-class VistaRegistroVisitante(generic.CreateView):
-    form_class= UserCreationForm
-    template_name = 'registro/registro.html'
-    success_url = reverse_lazy('login')
+from .forms import UsuarioRegistroForm
+from .models import Usuario
 
+class Registro(CreateView):
+    model = Usuario
+    form_class = UsuarioRegistroForm
+    template_name = "usuarios/registro.html"
 
+    def get_success_url(self, **kwargs):
+        return reverse('home')

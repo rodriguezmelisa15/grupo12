@@ -1,6 +1,7 @@
+from tokenize import Name
 from django.apps import AppConfig
 
 
-class VisitanteConfig(AppConfig):
+class UsuariosConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'Visitante'
+    name="usuarios"

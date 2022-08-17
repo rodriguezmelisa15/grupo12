@@ -1,6 +1,10 @@
 from django.urls import path
-from .views import VistaRegistroVisitante
+
+from . import views
+
+app_name= "usuarios"
 
 urlpatterns = [
-    path('registro/', VistaRegistroVisitante.as_view(), name="registro"),
+    path("registro/", views.Registro.as_view(), name="registro")
+
 ]

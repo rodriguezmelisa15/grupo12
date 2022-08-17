@@ -22,8 +22,11 @@
         </div>
     </div>
 </article>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> 182aa09eb838b8c89cf9bcb17091a752aacf5e60
 <section class="comments-container">
     {% if user.is_authenticated %}
         <button class="btn btn-light w-100" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1"
@@ -37,11 +40,17 @@
                     <textarea rows="4" placeholder="Escribe un comentario..."></textarea>
                     <div class="form-group">
                         <form method="POST"></form>
+<<<<<<< HEAD
                             
                             {% csrf_token %}
                             {{ form.as_p}}
                         <button class="btn btn-primary w-25">Comentar</button>
 
+=======
+                            {% csrf_token %}
+                            {{ form.as_p}}
+                        <button class="btn btn-primary w-25">Comentar</button>
+>>>>>>> 182aa09eb838b8c89cf9bcb17091a752aacf5e60
                     </div>
                     
                 </div>    
@@ -75,10 +84,14 @@
                         <div class="card-body">
                             <blockquote class="blockquote mb-0">
                                 {{ comment.comentario }}
+<<<<<<< HEAD
                                 <!-- <footer class="blockquote-footer">Fecha de Comentario <cite title="Source Title">- Moderador
                                         /
                                         Visitante</cite>
                                 </footer> -->
+=======
+                                
+>>>>>>> 182aa09eb838b8c89cf9bcb17091a752aacf5e60
                             </blockquote>
                         </div>
 
@@ -89,6 +102,9 @@
     </div>
 
 </section>
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> 182aa09eb838b8c89cf9bcb17091a752aacf5e60
 <a href="{% url 'home' %}" class="btn btn-secondary">Volver</a>
 {% endblock %}
