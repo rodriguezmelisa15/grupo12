@@ -38,15 +38,32 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'nosotros' %}">Quienes Somos</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'crear_noticia' %}">Agregar Noticias</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'registro' %}">Registrarse</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
-              </li>
+
+              {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'crear_noticia' %}">Agregar Noticias</a>
+                </li>
+              {% endif %}
+              
+              {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
+                </li>
+              {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'registro' %}">Registrarse</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
+                </li>
+
+              {% endif %}
+
+              
+
+              
+
+
             </ul>
           </div>
         </div>

@@ -31,3 +31,16 @@ class VistaEliminarNoticia(DeleteView):
 
 def VistaQuienesSomos(redirect):
     return render(redirect, 'nosotros.html')
+<<<<<<< Updated upstream
+=======
+
+class ComentarioNoticia(CreateView):
+    model = Comment
+    form_class = CrearComentario
+    template_name = 'detalles_noticia.html'
+    #fields = '__all__'
+    """def form_valid(self, form):
+        form.instance.noticia_id = self.kwargs['pk']
+        return super().form_valid(form)"""
+    success_url = reverse_lazy('home')
+>>>>>>> Stashed changes
