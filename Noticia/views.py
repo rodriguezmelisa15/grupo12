@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView, DeleteView
-from .models import Noticia
-from .forms import NoticiasForm
+from .models import Noticia, Comment
+from .forms import NoticiasForm,CrearComentario
 from django.urls import reverse_lazy
 
 
@@ -31,8 +31,7 @@ class VistaEliminarNoticia(DeleteView):
 
 def VistaQuienesSomos(redirect):
     return render(redirect, 'nosotros.html')
-<<<<<<< Updated upstream
-=======
+
 
 class ComentarioNoticia(CreateView):
     model = Comment
@@ -43,4 +42,4 @@ class ComentarioNoticia(CreateView):
         form.instance.noticia_id = self.kwargs['pk']
         return super().form_valid(form)"""
     success_url = reverse_lazy('home')
->>>>>>> Stashed changes
+
