@@ -16,7 +16,7 @@ class NoticiasForm(forms.ModelForm):
 class CrearComentario(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('usuario', 'comentario')
+        fields = ('comentario',)
 
         widgets = {
             'usuario': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Usuario'}),
