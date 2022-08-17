@@ -5,6 +5,10 @@
 {% block contenido %}
 
 <form class="d-flex w-50" role="search">
+    <select name="select">
+        <option value="value1">Categoria</option>
+        <option value="value2" selected>Fecha</option>
+    </select>
     <input class="form-control me-4" type="search" placeholder="Filtrar" aria-label="Filtrar" />
     <button class="btn btn-outline-primary">
         Filtrar
@@ -16,7 +20,7 @@
         <!-- FIXME: LINK a imagen de noticia-->
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHvevqdetxTWZXzQnrZmlCX5hH9ZXnqp8x2A&usqp=CAU"
             class="card-img-top" alt="..." />
-        <div class="card-body">
+        <div class="card-body card-body-home">
             <h5 class="card-title">{{ noticia.titulo }}</a> - {{ noticia.autor }}</h5>
             <p class="card-text">
                 {{ noticia.cuerpo }}

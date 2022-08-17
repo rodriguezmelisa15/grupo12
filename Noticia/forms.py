@@ -1,5 +1,5 @@
 from django import forms
-from .models import Noticia
+from .models import Noticia, Comment
 
 class NoticiasForm(forms.ModelForm):
     class Meta:
@@ -12,8 +12,6 @@ class NoticiasForm(forms.ModelForm):
             'autor': forms.Select(attrs={'class': 'form-control','placeholder': 'Nombre del autor'}),
             'cuerpo': forms.Textarea(attrs={'class': 'form-control', 'placerholder':'cuerpo de la noticia'}),
         }
-<<<<<<< Updated upstream
-=======
 
 class CrearComentario(forms.ModelForm):
     class Meta:
@@ -27,4 +25,3 @@ class CrearComentario(forms.ModelForm):
             'comentario': forms.Textarea(attrs={'class': 'form-control', 'placerholder':'comentario'}),
         }
         
->>>>>>> Stashed changes
