@@ -17,7 +17,7 @@ class Noticia(models.Model):
     def get_absolute_url(self):
         return reverse('home')
 
-
+        
 class Comment(models.Model):
     noticia = models.ForeignKey(Noticia, related_name="comentarios", on_delete=models.CASCADE)
     usuario = models.CharField(max_length=255)
@@ -26,4 +26,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return '%s - %s' % (self.noticia.titulo, self.usuario)
-        

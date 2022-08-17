@@ -25,4 +25,3 @@ class CrearComentario(forms.ModelForm):
             'comentario': forms.Textarea(attrs={'class': 'form-control', 'placerholder':'comentario'}),
         }
         
-

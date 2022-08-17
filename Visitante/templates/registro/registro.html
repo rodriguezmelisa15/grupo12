@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
-{% block titulo %} Registrar Nuevo Usuario {% endblock %}
+{% block titulo %}Registrar{% endblock %}
 {% block contenido %}
 
-<form method="POST" class="form-group">
-    {% csrf_token %}
-    {{ form.as_p}}
-    <button>Registrarse</button>
-</form>
+<h1>Registrar...</h1>
+<br/><br/>
+
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button class="btn btn-secondary">Registrar</button>
+</div>
 
 {% endblock %}
