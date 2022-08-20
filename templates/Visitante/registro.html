@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block titulo %}Registrar{% endblock %}
+{% block contenido %}
+
+
+<br/><br/>
+
+<form method="POST">{% csrf_token %}
+    
+    <table>
+
+        {{ form.as_table }}
+
+    </table>
+
+    <input type="reset" value="Limpiar">
+    <input type="submit" value="Registrar">
+
+    
+
+</form>
+
+
+
+{% endblock %}
