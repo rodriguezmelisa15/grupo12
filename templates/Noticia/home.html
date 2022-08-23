@@ -4,22 +4,24 @@
 
 {% block contenido %}
 
-<form class="d-flex w-50" role="search">
+<form method="get" class="d-flex w-50" role="search">
     <select name="select">
+
         <option value="value1">Categoria</option>
-        <option value="value1">Fecha</option>
+        <option value="value2">Fecha</option>
             
     </select>
-    
-
-
-    <input class="form-control me-4" type="search" placeholder="Filtrar" aria-label="Filtrar" />
-    <button class="btn btn-outline-primary">
+    <input class="form-control me-4" type="search" placeholder="Filtrar" aria-label="Filtrar" name="filtro" />
+    <button type="submit" class="btn btn-outline-primary" name="filtrado">
         Filtrar
     </button>
 </form>
+
+<h6>Categorias: 1= Cursos    2= Informacion    3= Ingresos / Fecha en formato: aaaa/mm/dd </h6>
+
+
 <section class="newsContainer">
-    {% for noticia in object_list %}
+    {% for noticia in noticia %}    
     <div class="card" style="width: 18rem">
         <!-- FIXME: LINK a imagen de noticia-->
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHvevqdetxTWZXzQnrZmlCX5hH9ZXnqp8x2A&usqp=CAU"

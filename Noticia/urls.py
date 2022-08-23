@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HomeView, VistaDetalleNoticia, VistaNuevaNoticia, VistaEliminarNoticia, VistaQuienesSomos, ComentarioNoticia
+from .views import HomeView, VistaNuevaNoticia, VistaEliminarNoticia, VistaQuienesSomos,ComentarioNoticia,VistaDetalleNoticia
 
 urlpatterns = [
     # path('', views.home, name='home'),
@@ -10,4 +10,7 @@ urlpatterns = [
          VistaEliminarNoticia.as_view(), name='eliminar_noticia'),
     path('nosotros/', VistaQuienesSomos, name='nosotros'),
     path('noticia/<int:pk>/comentarios', ComentarioNoticia.as_view(), name='crear_comentario'),
+    
+    
 ]
+

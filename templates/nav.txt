@@ -36,7 +36,7 @@
               </li>
             {% else %}
               <li class="nav-item">
-            <!--     <a class="nav-link" href="{% url 'registro' %}">Registrarse</a> -->
+                <a class="nav-link" href="{% url 'registro' %}">Registrarse</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>

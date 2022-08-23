@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+{{ noticia.titulo }} Titulo
+{% endblock %}
+
+{% block contenido %}
+
+
+
+<!-- <section class="comments-container"> -->
+
+    {% if user.is_authenticated %}
+           
+    
+        <div class="row">
+                        
+                <div class="card-body">
+                    <div class="form-group">
+                        <form method="POST"></form>
+                            
+                            {% csrf_token %}
+                            {{ form.as_p}}
+                        <button class="btn btn-primary w-50">Comentar</button>
+
+                    </div>
+                    
+                </div>    
+            
+            
+            
+
+        </div>
+
+    {% else %}
+        <h5> Debes iniciar sesión para comentar..</h5>
+        <a class="btn btn-primary w-25" href="{% url 'login' %}">Iniciar Sesión</a>
+        
+    {% endif %}
+
+<!-- </section> -->
+<a href="{% url 'home' %}" class="btn btn-secondary">Inicio</a>
+{% endblock %}
