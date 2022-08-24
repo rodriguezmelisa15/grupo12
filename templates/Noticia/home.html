@@ -21,6 +21,9 @@
 
 
 <section class="newsContainer">
+    {% if not noticias %}
+        <h3>No hay noticias en esta categoria o fecha</h3>
+    {% else %}
     {% for noticia in noticias %}    
     <div class="card" style="width: 18rem">
         <!-- FIXME: LINK a imagen de noticia-->
@@ -38,5 +41,5 @@
         </div>
     </div>
     {% endfor %}
-
+    {% endif %}
     {% endblock %}

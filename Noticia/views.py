@@ -28,6 +28,10 @@ class HomeView(ListView):
                 if fecha:
                     qs= qs.filter(fecha_noticia=fecha)
                     return qs
+                    
+            if ((self.request.GET.get("filtro")) == ""):
+                qs=Noticia.objects.all()
+                return qs
         else:
             qs=Noticia.objects.all()
             return qs
