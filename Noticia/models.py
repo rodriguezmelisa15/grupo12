@@ -4,13 +4,17 @@ from django.urls import reverse
 from datetime import datetime, date
 
 Noticia_categoria=[
-	(1,'Cursos'),
-	(2,'Informacion'),
-	(3,'Ingresos'),
+    ('Cursos','Cursos'),
+    ('Informacion','Informacion'),
+    ('Ingresos','Ingresos'),
+    ('Ambiental', 'Ambiental'),
+    ('Deportes', 'Deportes'),
+
 ]
+
 class Noticia(models.Model):
     titulo = models.CharField(max_length=255)
-    categoria = models.IntegerField(
+    categoria = models.CharField(max_length=255,
 	    null=False, blank=False,
 	    choices= Noticia_categoria,
 	    default=1

@@ -7,8 +7,8 @@
 <form method="get" class="d-flex w-50" role="search">
     <select name="select">
 
-        <option value="value1">Categoria</option>
-        <option value="value2">Fecha</option>
+        <option value="1">Categoria</option>
+        <option value="2">Fecha</option>
             
     </select>
     <input class="form-control me-4" type="search" placeholder="Filtrar" aria-label="Filtrar" name="filtro" />
@@ -17,11 +17,11 @@
     </button>
 </form>
 
-<h6>Categorias: 1= Cursos    2= Informacion    3= Ingresos / Fecha en formato: aaaa/mm/dd </h6>
+<h6>Categorias: 1= Cursos    2= Informacion    3= Ingresos / Fecha en formato: aaaa-mm-dd </h6>
 
 
 <section class="newsContainer">
-    {% for noticia in noticia %}    
+    {% for noticia in noticias %}    
     <div class="card" style="width: 18rem">
         <!-- FIXME: LINK a imagen de noticia-->
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHvevqdetxTWZXzQnrZmlCX5hH9ZXnqp8x2A&usqp=CAU"

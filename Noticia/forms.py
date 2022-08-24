@@ -16,13 +16,13 @@ class NoticiasForm(forms.ModelForm):
 class CrearComentario(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('comentario',)
+        fields = ['comentario']
 
         widgets = {
-            #'usuario': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Usuario'}),
+            'usuario': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Usuario'}),
             #'titulo_cartel': forms.TextInput(attrs={'class': 'form-control', }),
             #'autor': forms.Select(attrs={'class': 'form-control','placeholder': 'Nombre del autor'}),
             'comentario': forms.Textarea(attrs={'cols':"100",'rows':"5",'class': 'form-control', 'placerholder':'Comentario'}),
-            #'noticia': forms.IntegerField({'placerholder':'Noticia id'}),
+            #'noticia_id': forms.IntegerField({'placerholder':'noticia_id'}),
         }
         

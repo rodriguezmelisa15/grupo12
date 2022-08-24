@@ -25,21 +25,12 @@
 
 <section class="comments-container">
 
-    {% if user.is_authenticated %}
-        <a href="{% url 'crear_comentario' noticia.pk %}" class="btn btn-primary">Comentar</a>
-
-    {% else %}
-        <h5> Debes iniciar sesión para comentar..</h5>
-        <a class="btn btn-primary w-25" href="{% url 'login' %}">Iniciar Sesión</a>
-        
-    {% endif %}
-
-    <button class="btn btn-light  w-100" type="button" aria-expanded="false" > Todos los Comentarios</button>
-    <div class="row">
+     <div class="row">
                    
         {% if not noticia.comentarios.all %}
-            No hay comentarios..
+            <center><h5> No hay comentarios.. </h5></center>
         {% else %}
+            <center><h5> Todos los Comentarios </h5></center>
             {% for comment in noticia.comentarios.all %}
                 <div class="card">
 
@@ -63,5 +54,15 @@
     </div>
 
 </section>
+{% if user.is_authenticated %}
+<a href="{% url 'crear_comentario' noticia.pk %}" class="btn btn-primary">Comentar</a>
+
+{% else %}
+<h5> Debes iniciar sesión para comentar..</h5>
+<a class="btn btn-primary w-25" href="{% url 'login' %}">Iniciar Sesión</a>
+
+{% endif %}
 <a href="{% url 'home' %}" class="btn btn-secondary">Volver</a>
+
+
 {% endblock %}
