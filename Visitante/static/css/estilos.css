@@ -64,7 +64,7 @@ body {
 .navbar-toggler-container {
   width: 300px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .card-body {
@@ -79,7 +79,7 @@ body {
 }
 
 .newsContainer {
-  width: 80%;
+  width: 75%;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -94,7 +94,7 @@ body {
 }
 
 .logoImg {
-  height: 100px;
+  height: 80px;
 }
 
 header {

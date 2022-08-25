@@ -6,26 +6,24 @@ from django.urls import reverse_lazy
 
 
 class HomeView(ListView):
-    model = Noticia
-    template_name = 'home.html'
     ordering = ['-fecha_noticia']
 
 
 class VistaDetalleNoticia(DetailView):
     model = Noticia
-    template_name = 'detalles_noticia.html'
+    template_name = 'noticias/detalles_noticia.html'
 
 
 class VistaNuevaNoticia(CreateView):
     model = Noticia
     form_class = NoticiasForm
-    template_name = 'crear_noticia.html'
+    template_name = 'noticias/crear_noticia.html'
     #fields = '__all__'
 
 
 class VistaEliminarNoticia(DeleteView):
     model = Noticia
-    template_name = 'eliminar_noticia.html'
+    template_name = 'noticias/eliminar_noticia.html'
     success_url = reverse_lazy('home')
 
 

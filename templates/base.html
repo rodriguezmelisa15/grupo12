@@ -14,10 +14,11 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar">
+  <header class="d-flex flex-column align-items-center ">
+    <nav class="navbar w-75 flex-nowrap">
       <div class="container-fluid">
-        <img src="https://institutobarranqueras.com/wp-content/uploads/2019/08/Logo-Curvas-hor-02-303x119.png" alt="" />
+        <img class="logoImg"
+          src="https://institutobarranqueras.com/wp-content/uploads/2019/08/Logo-Curvas-hor-02-303x119.png" alt="" />
         <h1> {% block titulo %} {% endblock %}</h1>
         <div class="navbar-toggler-container">
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -45,7 +46,7 @@
                 <a class="nav-link" href="{% url 'registro' %}">Registrarse</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
+                <a class="nav-link" href="{% url 'inicio-sesion' %}">Iniciar Sesión</a>
               </li>
             </ul>
           </div>
