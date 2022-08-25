@@ -14,8 +14,6 @@ def Create(request):
     apellido = request.POST['txtApellido']
     mail = request.POST['txtMail']
     contraseña = request.POST['txtContra']
-    
-
     Usuario.objects.create(usuario= usuario, nombre= nombre, apellido= apellido, mail=mail, contraseña=contraseña,)
     return redirect('login/')
 """
@@ -24,7 +22,6 @@ def registro_usuario(request):
     data = {
         'form': CustomUserForm()
     }
-    
     if request.method == 'POST':
         formulario = CustomUserForm (request.POST)
         if formulario.is_valid():

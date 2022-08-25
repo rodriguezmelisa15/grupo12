@@ -5,32 +5,32 @@
 {% block contenido %}
 
 <form method="get" class="d-flex w-50" role="search">
-    <select name="select">
+    <select name="filtro" class="form-control me-4" aria-label="Filtrar">
+        <option value="">Todo</option>
+        <option value="Cursos">Cursos</option>
+        <option value="Información">Información</option>
+        <option value="Ingresos">Ingresos</option>
+        <option value="Ambiental">Ambiental</option>
+        <option value="Deportes">Deportes</option>
 
-        <option value="1">Categoria</option>
-        <option value="2">Fecha</option>
-            
     </select>
-    <input class="form-control me-4" type="search" placeholder="Filtrar" aria-label="Filtrar" name="filtro" />
+    <input type="date" class="form-control me-4" name="date">
     <button type="submit" class="btn btn-outline-primary" name="filtrado">
         Filtrar
     </button>
 </form>
-
-<h6>Categorias: 1= Cursos    2= Informacion    3= Ingresos / Fecha en formato: aaaa-mm-dd </h6>
-
-
 <section class="newsContainer">
     {% if not noticias %}
-        <h3>No hay noticias en esta categoria o fecha</h3>
+    <h3>No se encontraron noticias con los parámetros buscados</h3>
     {% else %}
-    {% for noticia in noticias %}    
+    {% for noticia in noticias %}
     <div class="card" style="width: 18rem">
         <!-- FIXME: LINK a imagen de noticia-->
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHvevqdetxTWZXzQnrZmlCX5hH9ZXnqp8x2A&usqp=CAU"
             class="card-img-top" alt="..." />
         <div class="card-body card-body-home">
-            <h5 class="card-title">{{ noticia.titulo }}</a> - {{ noticia.autor }}</h5>
+            <h5 class="card-title">{{ noticia.titulo }}</h5>
+            <small class="text-muted">{{ noticia.fecha_noticia }} - Por: {{ noticia.autor}}</small>
             <p class="card-text">
                 {{ noticia.cuerpo }}
             </p>

@@ -22,47 +22,55 @@
         </div>
     </div>
 </article>
-
 <section class="comments-container">
-
-     <div class="row">
-                   
-        {% if not noticia.comentarios.all %}
-            <center><h5> No hay comentarios.. </h5></center>
-        {% else %}
-            <center><h5> Todos los Comentarios </h5></center>
-            {% for comment in noticia.comentarios.all %}
-                <div class="card">
-
-                    <div class="card-header">
-                        <strong> {{ comment.usuario }} - {{ comment.fecha_comentario }} </strong>
-                    </div>
-
-                    <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            {{ comment.comentario }}
-                            <!-- <footer class="blockquote-footer">Fecha de Comentario <cite title="Source Title">- Moderador
-                                /
-                                Visitante</cite>
-                            </footer> -->
-                        </blockquote>
-                    </div>
-                </div>
-            {% endfor %}
-        {% endif %}
-        
+    <button class="btn btn-light w-100" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1"
+        aria-expanded="false" aria-controls="multiCollapseExample1">Escribir un Comentario</button>
+    <div class="row">
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+            <div class="card card-body">
+                {% if user.is_authenticated %}
+                <a href="{% url 'crear_comentario' noticia.pk %}" class="btn btn-primary">Comentar</a>
+                {% else %}
+                <h5> Debes iniciar sesión para comentar..</h5>
+                <a class="btn btn-primary w-25" href="{% url 'login' %}">Iniciar Sesión</a>
+                {% endif %}
+            </div>
+        </div>
     </div>
-
+    <button class="btn btn-light  w-100" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2"
+        aria-expanded="false" aria-controls="multiCollapseExample2">Ver Todos los Comentarios</button>
+    <div class="row">
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+            {% if not noticia.comentarios.all %}
+            <center>
+                <h5> No hay comentarios.. </h5>
+            </center>
+            {% else %}
+            {% for comment in noticia.comentarios.all %}
+            <div class="card">
+                <div class="card-header">
+                    {{ comment.usuario }}
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>{{ comment.comentario }}</p>
+                        <footer class="blockquote-footer">{{ comment.fecha_comentario }}
+                            <!--               <cite title="Source Title"> -
+                                {% if comment.user.is_staff %}
+                                Moderador
+                                {% else %}
+                                Visitante
+                                {% endif %}
+                            </cite> -->
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
 </section>
-{% if user.is_authenticated %}
-<a href="{% url 'crear_comentario' noticia.pk %}" class="btn btn-primary">Comentar</a>
 
-{% else %}
-<h5> Debes iniciar sesión para comentar..</h5>
-<a class="btn btn-primary w-25" href="{% url 'login' %}">Iniciar Sesión</a>
-
-{% endif %}
 <a href="{% url 'home' %}" class="btn btn-secondary">Volver</a>
-
-
 {% endblock %}
