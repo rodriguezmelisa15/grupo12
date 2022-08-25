@@ -6,10 +6,12 @@
 <br/><br/>
 
 <div class="form-group">
+    <center>
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-    <button class="btn btn-secondary">Ingresar</button>
+    <button class="btn btn-primary">Ingresar</button>
+    </center>
 </div>
 
 

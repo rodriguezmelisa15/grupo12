@@ -36,7 +36,11 @@
             </p>
             <div class="card-buttons">
                 <a href="{% url 'detalle-noticia' noticia.pk %}" class="btn btn-primary">Leer mas...</a>
+                {% if user.is_authenticated %}
+                {% if user.is_staff %}
                 <a href="{% url 'eliminar_noticia' noticia.pk %}" class="btn btn-danger">Eliminar</a>
+                {% endif %}
+                {% endif %}
             </div>
         </div>
     </div>
