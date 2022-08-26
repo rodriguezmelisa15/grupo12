@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block titulo %} Editar Noticia {% endblock %}
+{% block contenido %}
+
+<h1>editar noticia</h1>
+<div class="form-group">
+<form method="POST">
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form.as_p}}
+    <button>Editar</button>
+</form>
+</div>
+{% endblock %}

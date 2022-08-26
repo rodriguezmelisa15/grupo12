@@ -24,7 +24,7 @@
     <h3>No se encontraron noticias con los parámetros buscados</h3>
     {% else %}
     {% for noticia in noticias %}
-    <div class="card" style="width: 18rem">
+    <div class="card" style="width: 19rem">
         <!-- FIXME: LINK a imagen de noticia-->
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHvevqdetxTWZXzQnrZmlCX5hH9ZXnqp8x2A&usqp=CAU"
             class="card-img-top" alt="..." />
@@ -39,6 +39,7 @@
                 {% if user.is_authenticated %}
                 {% if user.is_staff %}
                 <a href="{% url 'eliminar_noticia' noticia.pk %}" class="btn btn-danger">Eliminar</a>
+                <a href="{% url 'editar_noticia' noticia.pk %}" class="btn btn-danger">Editar</a>
                 {% endif %}
                 {% endif %}
             </div>
