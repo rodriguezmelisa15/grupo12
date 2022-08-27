@@ -17,7 +17,7 @@
             <div class="card-body">
                 <h3 class="card-title">{{ noticia.titulo }}</h5>
                     <h6>{{ noticia.titulo_cartel }}</h6>
-                    <p class="card-text">{{ noticia.cuerpo }}</p>
+                    <p class="card-text">{{ noticia.cuerpo | safe }}</p>
             </div>
             <div class="card-footer">
                 <small class="text-muted">{{ noticia.fecha_noticia }} - Por: {{ noticia.autor}}</small>
