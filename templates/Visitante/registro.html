@@ -1,23 +1,13 @@
 {% extends 'base.html' %}
-{% block titulo %}Registrar{% endblock %}
+{% block titulo %}REGISTRO{% endblock %}
 {% block contenido %}
 
-
-<br/><br/>
-
-<form method="POST">{% csrf_token %}
-    
-    <table>
-
-        {{ form.as_table }}
-
-    </table>
+<form method="POST" class="register-form">{% csrf_token %}
+    {{ form.as_p }}
     <center>
-    <input type="reset"  class="btn btn-danger" value="Limpiar">
-    <input type="submit" class="btn btn-primary" value="Registrar">
+        <input type="reset" class="btn btn-danger" value="Limpiar">
+        <input type="submit" class="btn btn-primary" value="Registrar">
     </center>
-    
-
 </form>
 
 
