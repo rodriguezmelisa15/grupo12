@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
-{% block titulo %} Crear Noticia {% endblock %}
+{% block titulo %} Editar Noticia {% endblock %}
 {% block contenido %}
+
 
 {% if user.is_authenticated %}
     {% if user.is_staff %}
         <div class="form-group">
-            <form method="POST" enctype="multipart/form-data">
+            <form method="POST">
                 {% csrf_token %}
                 {{ form.media }}
                 {{ form.as_p}}
-                <button class="btn btn-primary">Publicar</button>
+
+                <button class="btn btn-primary">Editar</button>
                 <a href="{% url 'home' %}" class="btn btn-secondary">Volver</a>
             </form>
         </div>
@@ -20,5 +22,4 @@
     <h2>No podes Ingresar aqui!</h2>
 
 {% endif %}
-
 {% endblock %}

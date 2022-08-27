@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import datetime, date
+from ckeditor.fields import RichTextField
 
 Noticia_categoria=[
     ('Cursos','Cursos'),
@@ -14,13 +15,14 @@ Noticia_categoria=[
 
 class Noticia(models.Model):
     titulo = models.CharField(max_length=255)
+    imagen = models.ImageField(null=True, blank=True, upload_to="imagenes/")
     categoria = models.CharField(max_length=255,
 	    null=False, blank=False,
 	    choices= Noticia_categoria,
 	    default=1
     )
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
-    cuerpo = models.TextField()
+    cuerpo = RichTextField(blank=True, null=True)
     fecha_noticia = models.DateField(auto_now_add=True)
 
     def __str__(self):

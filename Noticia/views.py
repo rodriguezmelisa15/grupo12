@@ -1,9 +1,9 @@
 from pickle import GET
 from urllib import request
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView, CreateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 from .models import Noticia, Comment
-from .forms import NoticiasForm, CrearComentario
+from .forms import NoticiasForm, CrearComentario, EditarNoticiasForm
 from django.urls import reverse_lazy
 
 
@@ -40,7 +40,17 @@ class VistaNuevaNoticia(CreateView):
     model = Noticia
     form_class = NoticiasForm
     template_name = 'Noticia/crear_noticia.html'
-    #fields = '__all__'
+        #fields = '__all__'
+
+    def form_valid(self, form):
+        f = form.save(commit=False)
+        f.autor = self.request.user
+        print(self.request.user.username)
+        return super(VistaNuevaNoticia, self).form_valid(form)
+
+
+
+        
 
 class VistaEliminarNoticia(DeleteView):
     model = Noticia
@@ -64,3 +74,19 @@ class ComentarioNoticia(CreateView):
         return super(ComentarioNoticia, self).form_valid(form)
 
     success_url = reverse_lazy('home')
+
+
+class VistaEditarNoticia(UpdateView):
+    model = Noticia
+    form_class = EditarNoticiasForm
+    template_name = 'Noticia/editar_noticia.html'
+    #fields = ['titulo', 'categorias', 'cuerpo']
+
+    
+def VistaMision(redirect):
+    return render(redirect, 'Noticia/mision.html')
+
+def VistaLugarContacto(redirect):
+    return render(redirect, 'Noticia/lugar_contacto.html')
+
+    
