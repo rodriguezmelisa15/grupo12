@@ -3,16 +3,21 @@
 {% block contenido %}
 
 {% if user.is_authenticated %}
-    <div class="form-group">
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p}}
-            <button class="btn btn-primary">Publicar</button>
-        </form>
-    </div>
+    {% if user.is_staff %}
+        <div class="form-group">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p}}
+                <button class="btn btn-primary">Publicar</button>
+                <a href="{% url 'home' %}" class="btn btn-secondary">Volver</a>
+            </form>
+        </div>
+    {% else %}
+        <h2>No podes Ingresar aqui! {{ user.username }}</h2>
+    {% endif %}
 {% else %}
-
-No podes modificar!
+    <h2>No podes Ingresar aqui!</h2>
 
 {% endif %}
 

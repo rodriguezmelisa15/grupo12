@@ -40,7 +40,17 @@ class VistaNuevaNoticia(CreateView):
     model = Noticia
     form_class = NoticiasForm
     template_name = 'Noticia/crear_noticia.html'
-    #fields = '__all__'
+        #fields = '__all__'
+
+    def form_valid(self, form):
+        f = form.save(commit=False)
+        f.autor = self.request.user
+        print(self.request.user.username)
+        return super(VistaNuevaNoticia, self).form_valid(form)
+
+
+
+        
 
 class VistaEliminarNoticia(DeleteView):
     model = Noticia

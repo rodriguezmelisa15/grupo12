@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class NoticiasForm(forms.ModelForm):
     class Meta:
         model = Noticia
-        fields = ('titulo', 'categoria', 'autor', 'cuerpo')
+        fields = ('titulo', 'categoria','cuerpo','imagen')
 
 
         def __init__(self, is_staff, *args, **kwargs):
@@ -15,7 +15,7 @@ class NoticiasForm(forms.ModelForm):
         widgets = {
             'titulo': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Inserte un titulo a la noticia ##'}),
             'categoria': forms.Select(attrs={'class': 'form-control'}),
-            'autor': forms.Select(attrs={'class': 'form-control','placeholder': 'Nombre del autor'}),
+            #'autor': forms.Select(attrs={'class': 'form-control','placeholder': 'Nombre del autor'}),
             'cuerpo': forms.Textarea(attrs={'class': 'form-control', 'placerholder':'cuerpo de la noticia'}),
         }
 
@@ -35,7 +35,7 @@ class CrearComentario(forms.ModelForm):
 class EditarNoticiasForm(forms.ModelForm):
     class Meta:
         model = Noticia
-        fields = ('titulo', 'categoria', 'cuerpo')
+        fields = ('titulo', 'categoria', 'cuerpo','imagen')
 
         widgets = {
             'titulo': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Inserte un titulo a la noticia'}),

@@ -1,5 +1,8 @@
-from django.urls import path
+from django.urls import path,include
 from .views import HomeView, VistaEditarNoticia, VistaNuevaNoticia, VistaEliminarNoticia, VistaQuienesSomos,ComentarioNoticia,VistaDetalleNoticia, VistaMision,VistaLugarContacto
+from django.conf.urls.static import static
+from django.conf import settings
+
 
 urlpatterns = [
     # path('', views.home, name='home'),
@@ -14,7 +17,5 @@ urlpatterns = [
     path('mision/', VistaMision , name='mision'),
     path('lugar_contacto/', VistaLugarContacto , name='lugar-contacto'),
     
-    
-    
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

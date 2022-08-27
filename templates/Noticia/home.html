@@ -24,15 +24,20 @@
     <h3>No se encontraron noticias con los parámetros buscados</h3>
     {% else %}
     {% for noticia in noticias %}
+
     <div class="card" style="width: 19rem">
         <!-- FIXME: LINK a imagen de noticia-->
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHvevqdetxTWZXzQnrZmlCX5hH9ZXnqp8x2A&usqp=CAU"
-            class="card-img-top" alt="..." />
+        {% if noticias.imagen %}
+            <img src="{{ noticia.imagen.url }}" class="card-img-top">
+            <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHvevqdetxTWZXzQnrZmlCX5hH9ZXnqp8x2A&usqp=CAU"
+                class="card-img-top" alt="..." /> -->
+        {% endif %}
+
         <div class="card-body card-body-home">
             <h5 class="card-title">{{ noticia.titulo }}</h5>
             <small class="text-muted">{{ noticia.fecha_noticia }} - Por: {{ noticia.autor}}</small>
             <p class="card-text">
-                {{ noticia.cuerpo }}
+                {{ noticia.imagen }} - {{ noticia.cuerpo }}
             </p>
             <div class="card-buttons">
                 <a href="{% url 'detalle-noticia' noticia.pk %}" class="btn btn-primary">Leer mas...</a>
