@@ -7,9 +7,11 @@
 <form method="get" class="d-flex w-50" role="search">
     <select name="filtro" class="form-control me-4" aria-label="Filtrar">
         <option value="">Todo</option>
-        <option value="1">Cursos</option>
-        <option value="2">Información</option>
-        <option value="3">Ingresos</option>
+        <option value="Cursos">Cursos</option>
+        <option value="Informacion">Información</option>
+        <option value="Ingresos">Ingresos</option>
+        <option value="Ambiental">Ambiental</option>
+        <option value="Deportes">Deportes</option>
     </select>
     <input type="date" class="form-control me-4" name="date">
     <button type="submit" class="btn btn-outline-primary" name="filtrado">
@@ -21,19 +23,25 @@
     <h3>No se encontraron noticias con los parámetros buscados</h3>
     {% else %}
     {% for noticia in noticias %}
-    <div class="card" style="width: 18rem">
-        <!-- FIXME: LINK a imagen de noticia-->
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHvevqdetxTWZXzQnrZmlCX5hH9ZXnqp8x2A&usqp=CAU"
-            class="card-img-top" alt="..." />
+    <div class="card" style="width: 19rem">
+        <div class="img-contaier">
+            {% if noticia.imagen %}
+            <img src="{{ noticia.imagen.url }}">
+            {% else %}
+            <img src="https://i.ibb.co/cTYtLkz/background.jpg">
+            {% endif %}
+        </div>
         <div class="card-body card-body-home">
-            <h5 class="card-title">{{ noticia.titulo }}</a> - {{ noticia.autor }}</h5>
-            <p class="card-text">
-                {{ noticia.cuerpo }}
-            </p>
+            <h5 class="card-title">{{ noticia.titulo }}</h5>
+            <small class="text-muted">{{ noticia.fecha_noticia }} - Por: {{ noticia.autor}}</small>
+            <div class="card-text">
+                {{ noticia.cuerpo | safe}}
+            </div>
             <div class="card-buttons">
                 <a href="{% url 'detalle-noticia' noticia.pk %}" class="btn btn-primary">Leer mas...</a>
                 {% if user.is_authenticated %}
                 {% if user.is_staff %}
+                <a href="{% url 'editar_noticia' noticia.pk %}" class="btn btn-secondary">Editar</a>
                 <a href="{% url 'eliminar_noticia' noticia.pk %}" class="btn btn-danger">Eliminar</a>
                 {% endif %}
                 {% endif %}
