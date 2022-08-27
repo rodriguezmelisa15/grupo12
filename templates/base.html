@@ -16,10 +16,8 @@
 
 <body>
   <header>
-    
     <nav class="navbar">
-      
-      <img src="https://institutobarranqueras.com/wp-content/uploads/2019/08/Logo-Curvas-hor-02-303x119.png" alt=""/>
+      <img src="https://institutobarranqueras.com/wp-content/uploads/2019/08/Logo-Curvas-hor-02-303x119.png" alt="" />
       <h1> {% block titulo %} {% endblock %}</h1>
       <div class="navbar-toggler-container">
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -29,12 +27,12 @@
       </div>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>          
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-          {% if user.is_authenticated %}
-            <h6>Bienvenido {{ user.username }}</h6>
-          {% endif %}
+        {% if user.is_authenticated %}
+        <h6>Bienvenido {{ user.username }}</h6>
+        {% endif %}
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
@@ -44,45 +42,31 @@
               <a class="nav-link" href="{% url 'nosotros' %}">Quienes Somos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'mision' %}">Nuestra Mision</a>
+              <a class="nav-link" href="{% url 'mision' %}">Mision</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'lugar-contacto' %}">Lugar y Contacto</a>
+              <a class="nav-link" href="{% url 'lugar-contacto' %}">Contacto</a>
             </li>
             {% if user.is_authenticated %}
-              {% if user.is_staff %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'crear_noticia' %}">Agregar Noticias</a>
-                </li>
-              {% endif %}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
-              </li>
-            {% else %}
-
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'registro_usuario' %}">Registrarse</a>
-              </li>
-              
-            
+            {% if user.is_staff %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'crear_noticia' %}">Agregar Noticias</a>
+            </li>
             {% endif %}
-
-
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'registro_usuario' %}">Registrarse</a>
+            </li>
+            {% endif %}
           </ul>
-
-
         </div>
-
-
-
     </nav>
-
-
-
-
   </header>
   <section class="mainContainer">
     {% block contenido %}
