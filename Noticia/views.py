@@ -7,6 +7,7 @@ from .forms import NoticiasForm, CrearComentario, EditarNoticiasForm
 from django.urls import reverse, reverse_lazy
 
 
+
 class HomeView(ListView):
     model = Noticia
     template_name = 'Noticia/home.html'
@@ -75,9 +76,10 @@ class ComentarioNoticia(CreateView):
 
     def get_success_url(self):
         return reverse('detalle-noticia', kwargs={'pk': self.object.noticia_id})
-
+    
+    
     #success_url = reverse_lazy('home')
-
+    
 
 class VistaEditarNoticia(UpdateView):
     model = Noticia
@@ -92,4 +94,3 @@ def VistaMision(redirect):
 def VistaLugarContacto(redirect):
     return render(redirect, 'Noticia/lugar_contacto.html')
 
-    
