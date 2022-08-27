@@ -8,12 +8,9 @@
 <article class="detail-card">
     <div class="col">
         <div class="card h-100">
-            <!-- FIXME ENZO: Tomar imagen desde BD segun Noticia -->
             {% if noticia.imagen %}
                 <img src="{{ noticia.imagen.url }}">
             {% endif %}
-            
-
             <div class="card-body">
                 <h3 class="card-title">{{ noticia.titulo }}</h5>
                     <h6>{{ noticia.titulo_cartel }}</h6>
@@ -57,14 +54,8 @@
                 <div class="card-body">
                     <blockquote class="blockquote mb-0">
                         <p>{{ comment.comentario }}</p>
-                        <footer class="blockquote-footer">{{ comment.fecha_comentario }}
-                            <!--               <cite title="Source Title"> -
-                                {% if comment.user.is_staff %}
-                                Moderador
-                                {% else %}
-                                Visitante
-                                {% endif %}
-                            </cite> -->
+                        <footer class="blockquote-footer">
+                            {{ comment.fecha_comentario }}
                         </footer>
                     </blockquote>
                 </div>

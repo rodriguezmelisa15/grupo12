@@ -84,7 +84,7 @@ body {
   height: 100px;
   overflow-y: hidden;
   margin: 10px;
-  font-size: 22px
+  font-size: 22px;
 }
 
 .card-body-contact a i {
@@ -96,7 +96,7 @@ body {
   color: black;
 }
 
-.card-body-contact a:hover{
+.card-body-contact a:hover {
   color: #5b9f44;
 }
 
@@ -129,7 +129,16 @@ body {
 
 .navbar {
   background-color: transparent;
+}
+
+.navbar h1 {
+  max-width: 50%;
+  text-align: center;
   color: #5b9f44;
+}
+.navbar h6 {
+  padding: 16px;
+  color: #5a9cd6;
 }
 
 .navbar .navbar-toggler {
