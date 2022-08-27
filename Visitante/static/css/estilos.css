@@ -73,9 +73,31 @@ body {
   justify-content: space-between;
 }
 
-.card-body-home p {
+.card-body-home .card-text {
   height: 100px;
   overflow-y: hidden;
+  margin: 10px;
+}
+
+.card-body-contact {
+  font-size: 16;
+  height: 100px;
+  overflow-y: hidden;
+  margin: 10px;
+  font-size: 22px
+}
+
+.card-body-contact a i {
+  color: #5b9f44;
+  padding-right: 10px;
+}
+.card-body-contact a {
+  text-decoration: none;
+  color: black;
+}
+
+.card-body-contact a:hover{
+  color: #5b9f44;
 }
 
 .newsContainer {
@@ -135,4 +157,13 @@ body {
 .comments-container input {
   height: 60px;
   vertical-align: top;
+}
+
+.img-contaier img {
+  width: 19rem;
+}
+.img-contaier {
+  width: 19rem;
+  height: 14rem;
+  overflow: hidden;
 }
