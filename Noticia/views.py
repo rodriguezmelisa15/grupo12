@@ -3,8 +3,9 @@ from urllib import request
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView, DeleteView
 from .models import Noticia, Comment
-from .forms import NoticiasForm, CrearComentario
-from django.urls import reverse_lazy
+from .forms import NoticiasForm, CrearComentario, EditarNoticiasForm
+from django.urls import reverse_lazy,reverse
+
 
 
 class HomeView(ListView):
@@ -63,4 +64,29 @@ class ComentarioNoticia(CreateView):
         print(self.request.user.id)
         return super(ComentarioNoticia, self).form_valid(form)
 
+
     success_url = reverse_lazy('home')
+
+    def get_success_url(self):
+        return reverse('detalle-noticia', kwargs={'pk': self.object.noticia_id})
+    
+    
+    #success_url = reverse_lazy('home')
+    
+
+
+class VistaEditarNoticia(UpdateView):
+    model = Noticia
+    form_class = EditarNoticiasForm
+    template_name = 'Noticia/editar_noticia.html'
+    #fields = ['titulo', 'categorias', 'cuerpo']
+
+    
+def VistaMision(redirect):
+    return render(redirect, 'Noticia/mision.html')
+
+def VistaLugarContacto(redirect):
+    return render(redirect, 'Noticia/lugar_contacto.html')
+
+    
+
