@@ -8,13 +8,13 @@
 <article class="detail-card">
     <div class="col">
         <div class="card h-100">
-            <!-- FIXME ENZO: Tomar imagen desde BD segun Noticia -->
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHvevqdetxTWZXzQnrZmlCX5hH9ZXnqp8x2A&usqp=CAU"
-                class="card-img-top">
+            {% if noticia.imagen %}
+                <img src="{{ noticia.imagen.url }}">
+            {% endif %}
             <div class="card-body">
                 <h3 class="card-title">{{ noticia.titulo }}</h5>
                     <h6>{{ noticia.titulo_cartel }}</h6>
-                    <p class="card-text">{{ noticia.cuerpo }}</p>
+                    <p class="card-text">{{ noticia.cuerpo | safe }}</p>
             </div>
             <div class="card-footer">
                 <small class="text-muted">{{ noticia.fecha_noticia }} - Por: {{ noticia.autor}}</small>
@@ -28,8 +28,12 @@
     <div class="row">
         <div class="collapse multi-collapse" id="multiCollapseExample1">
             <div class="card card-body">
-                <textarea rows="4" placeholder="Escribe un comentario..."></textarea>
-                <button class="btn btn-primary w-25">Comentar</button>
+                {% if user.is_authenticated %}
+                <a href="{% url 'crear_comentario' noticia.pk %}" class="btn btn-primary">Comentar</a>
+                {% else %}
+                <h5> Debes iniciar sesión para comentar..</h5>
+                <a class="btn btn-primary w-25" href="{% url 'login' %}">Iniciar Sesión</a>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -37,23 +41,30 @@
         aria-expanded="false" aria-controls="multiCollapseExample2">Ver Todos los Comentarios</button>
     <div class="row">
         <div class="collapse multi-collapse" id="multiCollapseExample2">
+            {% if not noticia.comentarios.all %}
+            <center>
+                <h5> No hay comentarios.. </h5>
+            </center>
+            {% else %}
+            {% for comment in noticia.comentarios.all %}
             <div class="card">
                 <div class="card-header">
-                    Nombre de Usuario
+                    {{ comment.usuario }}
                 </div>
                 <div class="card-body">
                     <blockquote class="blockquote mb-0">
-                        <p>Este es el contenido de un comentario Random</p>
-                        <footer class="blockquote-footer">Fecha de Comentario <cite title="Source Title">- Moderador
-                                /
-                                Visitante</cite>
+                        <p>{{ comment.comentario }}</p>
+                        <footer class="blockquote-footer">
+                            {{ comment.fecha_comentario }}
                         </footer>
                     </blockquote>
                 </div>
             </div>
+            {% endfor %}
+            {% endif %}
         </div>
     </div>
-
 </section>
+
 <a href="{% url 'home' %}" class="btn btn-secondary">Volver</a>
 {% endblock %}

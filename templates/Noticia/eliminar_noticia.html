@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block titulo %} ELIMINAR NOTICIA {% endblock %}
+{% block contenido %}
+
+
+{% if user.is_authenticated %}
+    {% if user.is_staff %}
+
+        <div class="alert alert-danger d-flex flex-column align-items-center gap-3" role="alert">
+            <h2> ¿Seguro que quieres eliminar? </h2>
+                <div class="card" style="width: 18rem">
+                    <!-- FIXME: LINK a imagen de noticia-->
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHvevqdetxTWZXzQnrZmlCX5hH9ZXnqp8x2A&usqp=CAU"
+                    class="card-img-top" alt="..." />
+                    <div class="card-body card-body-home">
+                        <h5 class="card-title">{{ noticia.titulo }}</a></h5>
+                        <p class="card-text">
+                            {{ noticia.cuerpo }}
+                        </p>
+                        <h6> Creada por {{ noticia.autor }} - Fecha: {{ noticia.fecha_noticia }}</h6>
+                    </div>
+                </div>
+            <form method="POST" class="form-group">
+                {% csrf_token %}
+                <button class="btn btn-danger">Eliminar</button>
+                <a href="{% url 'home' %}" class="btn btn-secondary">Cancelar</a>
+            </form>
+
+        </div>
+    {% else %}
+        <h2>No podes Ingresar aqui! {{ user.username }}</h2>
+    {% endif %}
+{% else %}
+    <h2>No podes Ingresar aqui!</h2>
+{% endif %}
+
+{% endblock %}
