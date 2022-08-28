@@ -7,6 +7,7 @@ body {
 
 .mainContainer {
   display: flex;
+  height: calc(100vh - 100px);
   flex-direction: column;
   align-items: center;
   align-content: center;
@@ -73,9 +74,31 @@ body {
   justify-content: space-between;
 }
 
-.card-body-home p {
+.card-body-home .card-text {
+  height: 100px;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.card-body-contact {
+  font-size: 16;
   height: 100px;
   overflow-y: hidden;
+  margin: 10px;
+  font-size: 22px;
+}
+
+.card-body-contact a i {
+  color: #5b9f44;
+  padding-right: 10px;
+}
+.card-body-contact a {
+  text-decoration: none;
+  color: black;
+}
+
+.card-body-contact a:hover {
+  color: #5b9f44;
 }
 
 .newsContainer {
@@ -107,7 +130,16 @@ body {
 
 .navbar {
   background-color: transparent;
+}
+
+.navbar h1 {
+  max-width: 50%;
+  text-align: center;
   color: #5b9f44;
+}
+.navbar h6 {
+  padding: 16px;
+  color: #5a9cd6;
 }
 
 .navbar .navbar-toggler {
@@ -135,4 +167,38 @@ body {
 .comments-container input {
   height: 60px;
   vertical-align: top;
+}
+
+.img-contaier img {
+  width: 18.8rem;
+}
+.img-contaier {
+  width: 18.8rem;
+  height: 14rem;
+  overflow: hidden;
+}
+
+.register-form p {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form ul,
+.helptext {
+  display: none;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+}
+
+.login-form {
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
 }
