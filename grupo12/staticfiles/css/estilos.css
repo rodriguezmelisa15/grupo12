@@ -1,0 +1,204 @@
+body {
+  background-image: url("https://i.ibb.co/cTYtLkz/background.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100%;
+}
+
+.mainContainer {
+  display: flex;
+  height: calc(100vh - 100px);
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  gap: 30px;
+  padding-top: 10px;
+}
+
+.form-contenedor {
+  display: flex;
+  width: 50%;
+}
+
+.inst-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.inst-header {
+  display: flex;
+  padding: 30px 100px;
+}
+
+.inst-header h1 {
+  text-align: center;
+}
+
+.inst-header img {
+  width: 30%;
+}
+
+.inst-header div {
+  padding: 0 50px;
+  text-align: justify;
+}
+
+.inst-header p {
+  font-size: 20px;
+}
+
+.inst-body {
+  text-align: justify;
+  padding: 0 100px;
+}
+
+.detail-card {
+  width: 50%;
+}
+
+.login-form p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-toggler-container {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-body-home .card-text {
+  height: 100px;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.card-body-contact {
+  font-size: 16;
+  height: 100px;
+  overflow-y: hidden;
+  margin: 10px;
+  font-size: 22px;
+}
+
+.card-body-contact a i {
+  color: #5b9f44;
+  padding-right: 10px;
+}
+.card-body-contact a {
+  text-decoration: none;
+  color: black;
+}
+
+.card-body-contact a:hover {
+  color: #5b9f44;
+}
+
+.newsContainer {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.sliderContainer {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  overflow: hidden;
+}
+
+.logoImg {
+  height: 100px;
+}
+
+header {
+  background-color: transparent;
+}
+
+body {
+  background-color: transparent;
+}
+
+.navbar {
+  background-color: transparent;
+}
+
+.navbar h1 {
+  max-width: 50%;
+  text-align: center;
+  color: #5b9f44;
+}
+.navbar h6 {
+  padding: 16px;
+  color: #5a9cd6;
+}
+
+.navbar .navbar-toggler {
+  border: 1px solid #5a9cd6;
+}
+
+.navbar svg {
+  color: #5a9cd6;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.comments-container {
+  width: 50%;
+  border: 1px solid lightgray;
+}
+
+.comments-container .collapse {
+  padding: 10px 30px;
+}
+.comments-container input {
+  height: 60px;
+  vertical-align: top;
+}
+
+.img-contaier img {
+  width: 18.8rem;
+}
+.img-contaier {
+  width: 18.8rem;
+  height: 14rem;
+  overflow: hidden;
+}
+
+.register-form p {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form ul,
+.helptext {
+  display: none;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+}
+
+.login-form {
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+}
